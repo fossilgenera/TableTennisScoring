@@ -1,0 +1,6 @@
+@TableTennisScoring_HostAddress = http://localhost:5062
+
+GET {{TableTennisScoring_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
