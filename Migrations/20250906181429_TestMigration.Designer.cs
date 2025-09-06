@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TableTennisScoring.Models;
 
@@ -10,9 +11,11 @@ using TableTennisScoring.Models;
 namespace TableTennisScoring.Migrations
 {
     [DbContext(typeof(TableTennisScoringContext))]
-    partial class TableTennisScoringContextModelSnapshot : ModelSnapshot
+    [Migration("20250906181429_TestMigration")]
+    partial class TestMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.8");

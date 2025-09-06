@@ -23,7 +23,7 @@ namespace TableTennisScoring.Application.Services
             this.context = context;
         }
 
-        public async Task<List<CompetitorLookup>> GetCompetitorsBySearchCriteriaAsync(string searchCriteria)
+        public async Task<List<CompetitorLookup>> GetCompetitorsBySearchCriteriaAsync(string? searchCriteria)
         {
             var searchString = searchCriteria?.Trim().ToLower() ?? string.Empty;
             return await this.context.Competitors
@@ -32,7 +32,7 @@ namespace TableTennisScoring.Application.Services
                             c.CompetitorNickname.ToLower().Contains(searchString))
                 .Select(c => new CompetitorLookup
                 {
-                    CompetitorFullName = c.CompetitorFirstName + c.CompetitorLastName,
+                    CompetitorFullName = $"{c.CompetitorFirstName} {c.CompetitorLastName}",
                     CompetitorNickname = c.CompetitorNickname,
                     CompetitorId = c.CompetitorId,
                     NumberOfMatchesPlayed = c.MatchCompetitors.Where(mc => mc.CompetitorId == c.CompetitorId).Count(),
