@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore.Sqlite;
 using System.Reflection.Emit;
 using System.Threading.Tasks;
+using TableTennisScoring.Models.Base;
 
 
 namespace TableTennisScoring.Models
@@ -26,6 +27,7 @@ namespace TableTennisScoring.Models
         public DbSet<Match> Matches { get; set; } = null!;
         public DbSet<Rule> GameTypeRules { get; set; } = null!;
         public DbSet<Competitor> Competitors { get; set; } = null!;
+        public DbSet<MatchCompetitor> MatchCompetitors { get; set; } = null!;
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

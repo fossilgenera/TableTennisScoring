@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace TableTennisScoring.Models
+namespace TableTennisScoring.Models.Base
 {
     public class Rule
     {
